@@ -7,9 +7,8 @@
 		<title>Audyx Console</title>
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link href="css/style.css" rel="stylesheet">
-
-        <script src="js/peerjs.js"></script>
 		<script src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="https://services.audyx.com/socket.io/socket.io.js"></script>
 	</head>
 	<body ng-app="app" ng-controller="main">
 		
@@ -24,14 +23,17 @@
 			<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="connect(code)" ng-disabled="!code">
 				<span class="glyphicon glyphicon-refresh"></span> 
 			</button>
-			<button type="button" class="btn btn-success btn-lg btn-block" ng-click="send('yes')">
+			<button type="button" class="btn btn-success btn-lg btn-block" ng-click="yes()">
 				<span class="glyphicon glyphicon-thumbs-up"></span> 
 			</button>
-			<button type="button" class="btn btn-danger btn-lg btn-block" ng-click="send('no')">
+			<button type="button" class="btn btn-danger btn-lg btn-block" ng-click="no()">
 				<span class="glyphicon glyphicon-thumbs-down"></span> 
 			</button>
 
 		</div>
-		<script src="js/peer.js"></script>
+		
+		<script srs="http://localhost:1337/socket.io/socket.io.js"></script>
+		<script src="js/console.js"></script>
+
 	</body>
 </html>
